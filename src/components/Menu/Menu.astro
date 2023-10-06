@@ -1,0 +1,121 @@
+<nav
+  class="flex justify-between items-center gap-4 py-2 px-4 lg:px-12 bg-transparent w-full max-w-[1440px] mx-auto"
+>
+  <!-- Menu mobile -->
+  <input
+    type="checkbox"
+    id="menu-mobile"
+    class="cursor-pointer hidden absolute left-0 peer"
+  />
+  <label
+    for="menu-mobile"
+    class="cursor-pointer block lg:hidden fixed z-50 right-4 text-cyan-950 peer-checked:text-slate-50"
+  >
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="40"
+      height="40"
+      viewBox="0 0 24 24"
+      fill="currentColor"
+      ><path d="M4 6h16v2H4zm0 5h16v2H4zm0 5h16v2H4z"></path></svg
+    >
+  </label>
+
+  <!-- Fin menu mobile -->
+
+  <h1
+    class="text-slate-950 text-2xl font-semibold text-center w-fit mx-auto lg:mx-4"
+  >
+    Hatha Yoga
+    <span class="text-primary">Lobería</span>
+  </h1>
+
+  <div
+    class="fixed top-0 bottom-0 lg:relative lg:top-auto w-full lg:w-fit -left-full lg:left-auto peer-checked:left-0 transition-all duration-500 z-40"
+  >
+    <div
+      class="text-white lg:text-cyan-950 h-full lg:h-auto flex flex-col lg:flex-row items-center justify-center gap-8 backdrop-blur bg-black/40 lg:bg-transparent text-lg"
+    >
+      <a
+        href="/hathayogaloberia"
+        class={`${
+          Astro.url.pathname.replaceAll('/', '') === 'hathayogaloberia'
+            ? 'text-secondary'
+            : ''
+        } menu__item anim__bottom to__center`}
+        >Home</a
+      >
+      <a
+        class={`${
+          Astro.url.pathname.replaceAll('/', '') ===
+          'hathayogaloberiaacerca-de-mi'
+            ? 'text-secondary'
+            : ''
+        } menu__item anim__bottom to__center`}
+        href="/hathayogaloberia/acerca-de-mi"
+        >Acerca de mi</a
+      >
+      <a
+        class={`${
+          Astro.url.pathname.replaceAll('/', '') === 'hathayogaloberiaclases'
+            ? 'text-secondary'
+            : ''
+        } menu__item anim__bottom to__center`}
+        href="/hathayogaloberia/clases"
+        >Clases</a
+      >
+      <a
+        class={`${
+          Astro.url.pathname.replaceAll('/', '') === 'hathayogaloberiaposts'
+            ? 'text-secondary'
+            : ''
+        } menu__item anim__bottom to__center`}
+        href="/hathayogaloberia/posts"
+        >Blog</a
+      >
+      <a
+        class={`${
+          Astro.url.pathname.replaceAll('/', '') === 'hathayogaloberiacontacto'
+            ? 'text-secondary'
+            : ''
+        } menu__item anim__bottom to__center`}
+        href="/hathayogaloberia/contacto"
+        >Contacto</a
+      >
+    </div>
+  </div>
+</nav>
+
+<style>
+  /**********************/
+  /***   ANIMATIONS   ***/
+  /**********************/
+  .menu__item {
+    position: relative;
+    display: block;
+    /* padding: 4px 8px; */
+  }
+  .anim__bottom::after {
+    content: '';
+    position: absolute;
+    display: inline-block;
+    bottom: -1px;
+    width: 0%;
+    text-align: center;
+    background: var(--secondary-color);
+    height: 1px;
+    transition:
+      width 0.5s ease,
+      left 0.5s ease,
+      right 0.5s ease;
+  }
+  .anim__bottom:hover::after {
+    width: 100%;
+  }
+  .to__center::after {
+    left: 50%;
+  }
+  .to__center:hover::after {
+    left: 0%;
+  }
+</style>

@@ -1,0 +1,97 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { getPosts } from '../services/posts';
+const posts = await getPosts();
+---
+
+<Layout title="Hatha Yoga Lobería | Blog">
+  <main class="header">
+    <div class="rect-left"></div>
+    <section class="px-4 lg:px-16 mt-20 w-full md:w-3/4 mx-auto">
+      <div class="text-lg text-slate-950">
+        <p>
+          ¡Bienvenidos a nuestro blog de yoga y shiatsu! En este espacio,
+          compartimos información y reflexiones sobre yoga y shiatsu.
+        </p>
+        <p class="pt-8">
+          La difusión de estas prácticas es fundamental para nosotros. Creemos
+          en los beneficios transformadores que el yoga y el shiatsu pueden
+          aportar a la vida de las personas.
+        </p>
+        <p class="pt-8">
+          Este blog es un recurso que les brindará información valiosa,
+          inspiración y consejos prácticos para mejorar su práctica de yoga y
+          shiatsu. Estamos emocionados de ser parte de su viaje de difusión de
+          yoga y esperamos verlos en nuestras clases pronto.
+        </p>
+      </div>
+    </section>
+    <div class="px-4 lg:px-16 my-20 w-full mx-auto">
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+        {
+          posts.map((post) => (
+            <article class="w-full h-fit shadow">
+              <p class="text-sm text-slate-700">
+                {post.createdAt.split(' ')[0]}
+              </p>
+              <a
+                class="flex-none text-primary pt-4"
+                href={`/hathayogaloberia/blog/${post.slug}`}
+              >
+                <img
+                  transition:name={post.image}
+                  class="w-full h-[300px] object-cover"
+                  src={post.image}
+                  alt={post.altImage}
+                />
+              </a>
+              <div class="px-4 flex flex-col">
+                <h2
+                  class="flex-none text-lg font-medium text-primary font-title pt-4"
+                  transition:name={post.title}
+                >
+                  {post.title}
+                </h2>
+                <p
+                  class="line-clamp-3 pt-4"
+                  transition:name={post.excerpt}
+                >
+                  {post.excerpt}{' '}
+                </p>
+                <a
+                  class="flex-none text-primary pt-4"
+                  href={`/hathayogaloberia/blog/${post.slug}`}
+                >
+                  Leer más...
+                </a>
+              </div>
+            </article>
+          ))
+        }
+      </div>
+    </div>
+  </main>
+</Layout>
+
+<style>
+  .header {
+    position: relateive;
+    overflow: hidden;
+  }
+  .rect-left {
+    position: absolute;
+    overflow: hidden;
+    top: 100px;
+    left: -80px;
+    height: 50px;
+    width: 100%;
+    background: linear-gradient(
+      90deg,
+      rgba(110, 31, 131, 0.1) 0%,
+      rgba(255, 255, 255, 0) 100%
+        /* rgba(255, 255, 255, 0) 70%,
+      rgba(110, 31, 131, 0.2) 100% */
+    );
+    transform: rotate(-25deg);
+  }
+</style>

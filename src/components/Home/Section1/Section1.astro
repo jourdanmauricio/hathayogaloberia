@@ -1,0 +1,58 @@
+<section
+  class="smooth-seccion bg-pink-50 flex flex-col sm:flex-row py-24 gap-16 px-4 lg:px-12"
+>
+  <article class="w-full lg:w-1/2">
+    <img
+      class="block mx-auto w-20 h-20"
+      src="/hathayogaloberia/yoga-lotus.svg"
+      alt="yoga-lotus"
+    />
+    <p class="pt-8">
+      El yoga es el único método para el desarrollo físico, mental y espiritual
+      del hombre. Nació en la India hace Miles de años . No es una religión , ni
+      un credo confesional y no tiene templos, ceremonias ni dogmas. Constituye
+      un método integral de evolución.
+    </p>
+  </article>
+  <article class="w-full lg:w-1/2">
+    <img
+      class="block mx-auto w-20 h-20"
+      src="/hathayogaloberia/yoga-pose.svg"
+      alt="yoga-pose"
+    />
+    <p class="pt-8">
+      El Hatha Yoga juega un destacado papel tanto en el campo de la salud
+      corporal cómo mental. Mediante las asanas, las técnicas de control de la
+      respiración y de relajación, se pueden prevenir y/o calmar enfermedades
+      respiratorias, circulatorias y diversos desórdenes psicofisicos. Es
+      ansiolítico y sus técnicas sedan el sistema nervioso autónomo.
+    </p>
+  </article>
+</section>
+
+<style>
+  section {
+    view-timeline-name: --image;
+    view-timeline-axis: block;
+
+    animation-timeline: --image;
+    animation-name: show;
+
+    animation-range: entry 10% cover 50%;
+    animation-fill-mode: both;
+  }
+
+  @keyframes show {
+    from {
+      opacity: 0;
+      /* scale: 25%; */
+      transform: translateY(200px);
+    }
+
+    to {
+      opacity: 1;
+      /* scale: 100%; */
+      transform: translateY(0px);
+    }
+  }
+</style>

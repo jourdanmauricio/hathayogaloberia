@@ -1,0 +1,116 @@
+---
+
+---
+
+<div class="hero md:py-10">
+  <div class="relative flex gap-4 md:px-20 h-full justify-center">
+    <div class="w-11/12 lg:w-1/2 flex flex-col justify-center items-center">
+      <p class="text-4xl lg:text-5xl font-bold text-cyan-950 font-dancing">
+        Hatha Yoga Lobería
+      </p>
+      <p class="text-xl text-cyan-900 pt-4">Calma en el alma...</p>
+      <img
+        class="w-[150px] mx-auto"
+        src="/hathayogaloberia/hero-img-4_1.svg"
+        alt=""
+      />
+      <div class="contact pt-8">
+        <p>
+          Sumérgete en una experiencia única de bienestar y forma parte de
+          nuestra Comunidad
+        </p>
+        <div class="mt-10 md:mt-20 flex justify-center w-full h-full">
+          <button class="p-2 rounded bg-primary w-32 h-10 text-white"
+            >Únete</button
+          >
+          <button class="ml-10 p-2 rounded bg-primary w-32 h-10 text-white"
+            >Contáctanos</button
+          >
+        </div>
+      </div>
+    </div>
+    <div class="hidden lg:block relative w-1/2 mt-10 -translate-y-5">
+      <!-- <img
+        class="image absolute bottom-0 right-0 rounded-lg w-1/3 scale-125 object-cover h-1/3 shadow-lg"
+        src="/hathayogaloberia/yoga-1-480_640.jpg"
+        alt="image"
+      /> -->
+      <img
+        class="image absolute bottom-0 left-0 rounded-lg w-1/3 scale-110 object-cover h-1/3 shadow-lg"
+        src="/hathayogaloberia/yoga-1-480_640.jpg"
+        alt="image"
+      />
+      <!-- <img
+        class="image absolute top-0 left-0 rounded-lg w-1/3 scale-125 object-cover h-1/3 shadow-lg"
+        src="/hathayogaloberia/yoga-3-454_640.jpg"
+        alt="image"
+      /> -->
+      <img
+        class="image absolute top-0 right-0 rounded-lg w-1/3 scale-110 object-cover h-1/3 shadow-lg"
+        src="/hathayogaloberia/yoga-3-454_640.jpg"
+        alt="image"
+      />
+      <img
+        class="image absolute top-1/3 left-1/3 rounded-lg w-1/3 scale-110 object-cover h-1/3 shadow-lg"
+        src="/hathayogaloberia/yoga-2-427_640.jpg"
+        alt="image"
+      />
+    </div>
+  </div>
+  <!-- <div
+    class="absolute -bottom-0 -right-0 w-[300px] h-[300px] bg-pink-100/40 rounded-tl-3xl"
+  >
+  </div> -->
+</div>
+
+<style>
+  .hero {
+    height: calc(100vh - 70px);
+  }
+  @media (min-width: 1536px) {
+    .hero {
+      height: 800px;
+    }
+  }
+  .contact {
+    animation: 2s title-text ease-in-out;
+  }
+  @keyframes title-text {
+    0% {
+      transform: translateY(100px);
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }
+  .image {
+    animation: changeBackground 2s;
+    animation-fill-mode: both;
+  }
+  .image:nth-of-type(1) {
+    animation-delay: 0s;
+    opacity: 0;
+  }
+  .image:nth-of-type(2) {
+    animation-delay: 0s;
+    opacity: 0;
+  }
+  .image:nth-of-type(3) {
+    animation-delay: 1s;
+    opacity: 0;
+  }
+  /* .image:nth-of-type(4) {
+    animation-delay: 0s;
+    opacity: 0;
+  }
+  .image:nth-of-type(5) {
+    animation-delay: 1s;
+    opacity: 0;
+  } */
+
+  @keyframes changeBackground {
+    100% {
+      opacity: 1;
+    }
+  }
+</style>
