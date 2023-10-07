@@ -10,8 +10,19 @@ const offices = await getOffices();
 <Layout title="Hatha Yoga Lobería | Contacto">
   <main>
     <section
-      class="flex flex-col gap-8 justify-center items-center sm:flex-row sm:mt-0 px-4 lg:px-16 h-screen max-h-[800px]"
+      class="flex flex-col gap-8 justify-center items-center sm:flex-row sm:mt-0 px-4 lg:px-16 h-[calc(100vh_-_48px)] max-h-[800px]"
     >
+      <div class="wave">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 1024 600"
+        >
+          <path
+            fill="white"
+            d="M 0 600 Q 0 300 0 150 Q 250 0 350 150 Q 550 550 900 550 L 1024 550 L 1024 600 Z"
+          ></path>
+        </svg>
+      </div>
       <div class="w-full sm:w-1/2">
         <h2 class="text-5xl font-dancing text-primary text-center">
           Conectemos
@@ -108,56 +119,65 @@ const offices = await getOffices();
     </section>
     <Subscription />
   </main>
-</Layout>
 
-<style>
-  .background {
-    /* position: absolute; */
+  <style>
+    .background {
+      /* position: absolute; */
 
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: azure;
-    background-image: 
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: azure;
+      background-image: 
     /* radial-gradient(
         circle at 15% 15%,
         #ff6b6b 0%,
         transparent 8%
       ), */ radial-gradient(
-      circle at 40% 75%,
-      #67e8f9 -40%,
-      transparent 20%
-    );
-  }
-  #map {
-    height: 350px;
-    width: 100%;
-  }
-</style>
+        circle at 40% 75%,
+        #67e8f9 -40%,
+        transparent 20%
+      );
+    }
+    #map {
+      height: 350px;
+      width: 100%;
+    }
+    .wave {
+      width: 100%;
+      bottom: 0;
+      left: 0;
+      /* height: 100%; */
+      /* height: calc(100vh - 48px); */
+      position: absolute;
+      z-index: -99;
+    }
+  </style>
 
-<script define:vars={{ offices }}>
-window.initMap = function () {
-  console.log( 'offices[0]', offices[0] );
-  var coord = {
-    lat: parseFloat( offices[0].lat ),
-    lng: parseFloat( offices[0].lng ),
-  };
-  var map = new google.maps.Map( document.getElementById( 'map' ), {
-    zoom: 14,
-    center: coord,
-  } );
-  var marker = new google.maps.Marker( {
-    position: coord,
-    map: map,
-  } );
-};
-</script>
+  <script define:vars={{ offices }}>
+    window.initMap = function () {
+      console.log('offices[0]', offices[0]);
+      var coord = {
+        lat: parseFloat(offices[0].lat),
+        lng: parseFloat(offices[0].lng),
+      };
+      var map = new google.maps.Map(document.getElementById('map'), {
+        zoom: 14,
+        center: coord,
+      });
+      var marker = new google.maps.Marker({
+        position: coord,
+        map: map,
+      });
+    };
+  </script>
 
-<script
-  async
-  defer
-  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAeRYDNFRPnw7Hh7qs4Cog5H6CXmgwh5go&callback=initMap"
->
-console.log( 'PASS_MAPS', PASS_MAPS );
-</script>
+  <script
+    async
+    defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAeRYDNFRPnw7Hh7qs4Cog5H6CXmgwh5go&callback=initMap"
+  >
+    console.log('PASS_MAPS', PASS_MAPS);
+  </script>
+</Layout>
