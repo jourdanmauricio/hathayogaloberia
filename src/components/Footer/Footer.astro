@@ -1,6 +1,7 @@
 ---
 import SocialNetworks from '../SocialNetworks/SocialNetworks.astro';
 import { getOffices } from '../../services/offices';
+import namaste from '../../assets/images/footer/namaste.svg';
 
 const offices = await getOffices();
 ---
@@ -20,8 +21,8 @@ const offices = await getOffices();
         <img
           class="mx-auto"
           width="30"
-          src="/hathayogaloberia/namaste.svg"
-          alt=""
+          src={namaste.src}
+          alt="Imagen namaste"
         />
         <p class="text-slate-600">Namasté</p>
       </div>

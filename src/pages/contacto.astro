@@ -3,6 +3,7 @@ import Layout from '../layouts/Layout.astro';
 import Subscription from '../components/Subscription/Subscription.astro';
 import ContactForm from '../components/Contact/ContactForm/ContactForm.astro';
 import { getOffices } from '../services/offices';
+import heroContact from '../assets/images/contact/hero-contact.png';
 
 const offices = await getOffices();
 ---
@@ -35,7 +36,7 @@ const offices = await getOffices();
       <div class="w-1/2">
         <img
           class="object-cover sm:max-w-sm"
-          src="/hathayogaloberia/Lucia-2.png"
+          src={heroContact.src}
           alt=""
         />
       </div>

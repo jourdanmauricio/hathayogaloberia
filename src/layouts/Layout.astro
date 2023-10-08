@@ -5,6 +5,7 @@ import '@fontsource-variable/dancing-script';
 import Footer from '../components/Footer/Footer.astro';
 import Menu from '../components/Menu/Menu.astro';
 import { ViewTransitions } from 'astro:transitions';
+import logo from '../assets/logo.jpeg';
 
 interface Props {
   title: string;
@@ -90,7 +91,7 @@ const {
     <link
       rel="icon"
       type="image/jpeg"
-      href="/hathayogaloberia/logo.jpeg"
+      href={logo.src}
     />
     <meta
       name="generator"
