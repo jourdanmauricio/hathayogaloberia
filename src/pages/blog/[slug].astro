@@ -8,15 +8,39 @@ export async function getStaticPaths() {
     ({ slug, title, content, image, altImage, excerpt, createdAt }) => {
       return {
         params: { slug },
-        props: { title, content, image, altImage, excerpt, createdAt },
+        props: {
+          title,
+          slug,
+          content,
+          image,
+          altImage,
+          description: excerpt,
+          excerpt,
+          createdAt,
+        },
       };
     }
   );
 }
-const { title, content, image, altImage, excerpt, createdAt } = Astro.props;
+const {
+  title,
+  content,
+  image,
+  altImage,
+  slug,
+  description,
+  excerpt,
+  createdAt,
+} = Astro.props;
 ---
 
-<Layout title={title}>
+<Layout
+  title={title}
+  {description}
+  {slug}
+  {createdAt}
+  {image}
+>
   <section class="mt-8 px-4 lg:px-16">
     <h2
       class="text-3xl text-center"

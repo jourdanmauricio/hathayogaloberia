@@ -8,9 +8,19 @@ import { ViewTransitions } from 'astro:transitions';
 
 interface Props {
   title: string;
+  description?: string;
+  image?: string;
+  slug?: string;
+  createdAt?: string;
 }
 
-const { title } = Astro.props;
+const {
+  title,
+  description = 'Hatha Yoga Lobería',
+  image = '/assets/fallback-image.png',
+  slug,
+  createdAt,
+} = Astro.props;
 ---
 
 <!doctype html>
@@ -19,8 +29,62 @@ const { title } = Astro.props;
     <meta charset="UTF-8" />
     <meta
       name="description"
-      content="Astro description"
+      content={description}
     />
+    <!-- Twitter Card data -->
+    <meta
+      name="twitter:card"
+      content="summary"
+    />
+    <meta
+      name="twitter:site"
+      content="@publisher_handle"
+    />
+    <meta
+      name="twitter:title"
+      content={title}
+    />
+    <meta
+      name="twitter:description"
+      content={description}
+    />
+    <meta
+      name="twitter:creator"
+      content="@author_handle"
+    />
+    <!-- Twitter Summary card images. Igual o superar los 200x200px -->
+    <meta
+      name="twitter:image"
+      content=`<a href=${image}>{image}</a>`
+    />
+    <!-- Open Graph data -->
+    <meta
+      property="og:title"
+      content={title}
+    />
+    <meta
+      property="og:type"
+      content="article"
+    />
+    <!-- Ver si agregar baseurl -->
+    <meta
+      property="og:url"
+      content={slug}
+    />
+    <meta
+      property="og:image"
+      content={image}
+    />
+    <meta
+      property="og:description"
+      content={description}
+    />
+    <!-- <meta
+      property="og:site_name"
+      content="Nombre de la web, i.e. Moz"
+      property="fb:admins"
+      content="ID de Facebook"
+    /> -->
     <meta
       name="viewport"
       content="width=device-width"

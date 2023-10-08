@@ -1,0 +1,78 @@
+{/* Share post  */}
+<div class="mt-10">
+  <p>Compartir en redes sociales</p>
+  <div class="mt-2 flex gap-4 items-center">
+    <FacebookShareButton
+      url={`https://hathayogaloberia.com.ar/blog/${post.slug}`}
+      url={`${process.env.NEXT_PUBLIC_FRONTEND}/blog/${post.slug}`}
+      quote={'Dummy text!'}
+      hashtag="#muo"
+    >
+      <FacebookIcon
+        size={32}
+        round
+      />
+    </FacebookShareButton>
+
+    <TwitterShareButton
+      url={`${process.env.NEXT_PUBLIC_FRONTEND}/blog/${post.slug}`}
+      quote={'Dummy text!'}
+      hashtag="#muo"
+    >
+      <TwitterIcon
+        class="-top-10"
+        size={32}
+        round
+      />
+    </TwitterShareButton>
+
+    <EmailShareButton
+      url={`${process.env.NEXT_PUBLIC_FRONTEND}/blog/${post.slug}`}
+      quote={'Dummy text!'}
+      hashtag="#muo"
+    >
+      <EmailIcon
+        size={32}
+        round
+      />
+    </EmailShareButton>
+    <PinterestShareButton
+      url={`${process.env.NEXT_PUBLIC_FRONTEND}/blog/${post.slug}`}
+      quote={'Dummy text!'}
+      hashtag="#muo"
+    >
+      <PinterestIcon
+        size={32}
+        round
+      />
+    </PinterestShareButton>
+
+    <TelegramShareButton
+      url={`${process.env.NEXT_PUBLIC_FRONTEND}/blog/${post.slug}`}
+      quote={'Dummy text!'}
+      hashtag="#muo"
+    >
+      <TelegramIcon
+        size={32}
+        round
+      />
+    </TelegramShareButton>
+    <WhatsappShareButton
+      url={`${process.env.NEXT_PUBLIC_FRONTEND}/blog/${post.slug}`}
+      quote={'Dummy text!'}
+      hashtag="#muo"
+    >
+      <WhatsappIcon
+        size={32}
+        round
+      />
+    </WhatsappShareButton>
+  </div>
+</div>
+{/*  Author */}
+<div class="mt-10 md:px-10 pb-10">
+  <Author
+    post={post}
+    textColor={pagePost.decorationColor}
+  />
+</div>

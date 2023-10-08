@@ -1,13 +1,16 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import { getPosts } from '../services/posts';
-const posts = await getPosts();
+
+const data = await getPosts();
+
+const filterData = data.filter((post) => post.sections.includes('blog'));
+const posts = filterData.sort((a, b) => a.order - b.order);
 ---
 
 <Layout title="Hatha Yoga Lobería | Blog">
+  <div class="rect-left"></div>
   <header class="relative overflow-hidden">
-    <div class="rect-left"></div>
-
     <section class="px-4 lg:px-16 mt-20 w-full md:w-3/4 mx-auto">
       <div class="text-lg text-slate-950">
         <p>
