@@ -1,3 +1,4 @@
+<div class="rect-left"></div>
 <nav
   class="flex justify-between items-center gap-4 py-2 px-4 lg:px-12 bg-transparent w-full max-w-[1440px] mx-auto"
   id="menu"
@@ -91,7 +92,7 @@
     class="fixed top-0 bottom-0 lg:relative lg:top-auto w-full lg:w-fit -left-full lg:left-auto peer-checked:left-0 transition-all duration-500 z-40"
   >
     <div
-      class="text-white lg:text-cyan-950 h-full lg:h-auto flex flex-col lg:flex-row items-center justify-center gap-8 backdrop-blur bg-black/40 lg:bg-transparent text-lg"
+      class="text-white lg:text-cyan-950 h-full lg:h-auto flex flex-col lg:flex-row items-center justify-center gap-8 backdrop-blur lg:backdrop-blur-none bg-black/40 lg:bg-transparent text-lg"
     >
       <a
         href="/hathayogaloberia"
@@ -175,5 +176,22 @@
   }
   .to__center:hover::after {
     left: 0%;
+  }
+</style>
+
+<style>
+  .rect-left {
+    position: absolute;
+    overflow: hidden;
+    top: 100px;
+    left: -80px;
+    height: 50px;
+    width: 100%;
+    background: linear-gradient(
+      90deg,
+      rgba(110, 31, 131, 0.1) 0%,
+      rgba(255, 255, 255, 0) 100%
+    );
+    transform: rotate(-25deg);
   }
 </style>
