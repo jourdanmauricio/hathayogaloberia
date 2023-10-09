@@ -9,7 +9,6 @@ const posts = filterData.sort((a, b) => a.order - b.order);
 ---
 
 <Layout title="Hatha Yoga Lobería | Blog">
-  <!-- <div class="rect-left"></div> -->
   <header class="relative overflow-hidden">
     <section class="px-4 lg:px-16 mt-20 w-full md:w-3/4 mx-auto">
       <div class="text-lg text-slate-950">
@@ -33,27 +32,27 @@ const posts = filterData.sort((a, b) => a.order - b.order);
   </header>
   <main>
     <div class="px-4 lg:px-16 my-20 w-full mx-auto">
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
         {
           posts.map((post) => (
-            <article class="w-full h-fit shadow">
+            <article class="w-full h-fit shadow mx-auto max-w-[300px] lg:max-w-none">
               <p class="text-sm text-slate-700">
                 {post.createdAt.split(' ')[0]}
               </p>
               <a
-                class="flex-none text-primary pt-4"
+                class="flex-none text-primary pt-4 "
                 href={`/hathayogaloberia/blog/${post.slug}`}
               >
                 <img
                   transition:name={post.image}
-                  class="w-full h-[300px] object-cover"
+                  class="w-full h-[200px] object-cover"
                   src={post.image}
                   alt={post.altImage}
                 />
               </a>
               <div class="px-4 flex flex-col">
                 <h2
-                  class="flex-none text-lg font-medium text-primary font-title pt-4"
+                  class="flex-none text-lg font-medium text-primary font-title pt-4 line-clamp-1"
                   transition:name={post.title}
                 >
                   {post.title}
@@ -78,20 +77,3 @@ const posts = filterData.sort((a, b) => a.order - b.order);
     </div>
   </main>
 </Layout>
-
-<!-- <style>
-  .rect-left {
-    position: absolute;
-    overflow: hidden;
-    top: 100px;
-    left: -80px;
-    height: 50px;
-    width: 100%;
-    background: linear-gradient(
-      90deg,
-      rgba(110, 31, 131, 0.1) 0%,
-      rgba(255, 255, 255, 0) 100%
-    );
-    transform: rotate(-25deg);
-  }
-</style> -->
