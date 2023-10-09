@@ -1,0 +1,102 @@
+---
+import service1 from '../../../assets/images/home/service1.jpg';
+import service2 from '../../../assets/images/home/service2.jpg';
+import service3 from '../../../assets/images/home/service3.jpg';
+---
+
+<p class="text-center py-8 font-dancing text-2xl text-primary">
+  El yoga produce grandes beneficios a aquellos que lo practican con tenacidad y
+  de forma regular
+</p>
+
+<div class="pt-20 flex flex-wrap justify-center">
+  <article class="relative w-[250] m-5 group">
+    <figure>
+      <img
+        src={service1.src}
+        alt="Hatha Yoga"
+        class="block w-full max-w-[250px] mx-auto my-0 rounded shadow-[0_0_10px_rgba(0,0,0,0.25)]"
+        width={250}
+        height={250}
+      />
+
+      <figcaption
+        class="w-0 h-full absolute bottom-0 left-0 right-0 bg-primary overflow-hidden ease-in-out duration-700 rounded group-hover:w-full group-hover:opacity-80"
+      >
+        <p
+          class="absolute top-1/2 left-1/2 whitespace-nowrap text-slate-200 text-lg -translate-x-1/2 -translate-y-1/2 border-t border-b border-solid border-slate-200"
+        >
+          Hatha Yoga
+        </p>
+      </figcaption>
+    </figure>
+  </article>
+
+  <article class="relative w-[250] m-5 group">
+    <figure class="servicio__picture">
+      <img
+        src={service2.src}
+        alt="Hatha Yoga"
+        class="block w-full max-w-[250px] mx-auto my-0 rounded shadow-[0_0_10px_rgba(0,0,0,0.25)]"
+        width={250}
+        height={250}
+      />
+      <figcaption
+        class="w-0 h-full absolute bottom-0 left-0 right-0 bg-primary overflow-hidden ease-in-out duration-700 rounded group-hover:w-full group-hover:opacity-80"
+      >
+        <p
+          class="absolute top-1/2 left-1/2 whitespace-nowrap text-slate-200 text-lg -translate-x-1/2 -translate-y-1/2 border-t border-b border-solid border-slate-200"
+        >
+          Terapia Shiatsu
+        </p>
+      </figcaption>
+    </figure>
+  </article>
+
+  <article class="relative w-[250] m-5 group">
+    <figure class="servicio__picture">
+      <img
+        src={service3.src}
+        alt="Hatha Yoga"
+        class="block w-full max-w-[250px] mx-auto my-0 rounded shadow-[0_0_10px_rgba(0,0,0,0.25)]"
+        width={250}
+        height={250}
+      />
+      <figcaption
+        class="w-0 h-full absolute bottom-0 left-0 right-0 bg-primary overflow-hidden ease-in-out duration-700 rounded group-hover:w-full group-hover:opacity-80"
+      >
+        <p
+          class="absolute top-1/2 left-1/2 whitespace-nowrap text-slate-200 text-lg -translate-x-1/2 -translate-y-1/2 border-t border-b border-solid border-slate-200"
+        >
+          Clases online
+        </p>
+      </figcaption>
+    </figure>
+  </article>
+</div>
+
+<a
+  href="/hathayogaloberia/nuestras-clases"
+  class="block my-8 mx-auto w-[280px] rounded bg-primary text-slate-200 px-[5px] py-2 uppercase text-lg border-2 border-solid border-transparent ease-in-out duration-300 no-underline hover:bg-transparent hover:border-primary hover:text-primary text-center"
+  >Mas informacion</a
+>
+
+<figure
+  class="relative h-[250px] bg-[url('/hathayogaloberia/images/paralax-postura-opt.webp')] bg-cover bg-center bg-no-repeat bg-fixed mb-15"
+>
+  <div class="absolute h-full w-full top-0 bg-black opacity-40"></div>
+
+  <div class="absolute separador__container container text-white font-primary">
+    <blockquote
+      class="h-full w-full p-10 flex items-center justify-center text-2xl md:text-4xl"
+    >
+      <p class="font-dancing">
+        No importa lo profundo que llegues en una postura, lo que importa es
+        quién eres cuando llegas allí.
+      </p>
+    </blockquote>
+    <figcaption class="pl-10 text-left font-raleway">
+      &mdash; Max Strom
+    </figcaption>
+  </div>
+</figure>

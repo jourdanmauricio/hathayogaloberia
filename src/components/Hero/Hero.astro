@@ -1,14 +1,25 @@
 ---
 import heroImg from '../../assets/images/hero/hero-img.webp';
-import backFloat from '../../assets/images/hero/back-flot.png';
+import backFloat from '../../assets/images/hero/back-float.png';
 import backFloat2 from '../../assets/images/hero/back-float-2.png';
 ---
 
+<div class="wave">
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 1024 600"
+  >
+    <path
+      fill="white"
+      d="M 0 600 Q 0 300 0 150 Q 250 0 350 150 Q 550 550 900 550 L 1024 550 L 1024 600 Z"
+    ></path>
+  </svg>
+</div>
 <div class="hero md:py-10">
   <div class="relative flex gap-4 md:px-20 h-full justify-center">
     <div class="absolute hidden lg:block -top-28 right-10 h-[400px]">
       <img
-        width="500"
+        width="480"
         src={backFloat.src}
         alt=""
       />
@@ -35,13 +46,13 @@ import backFloat2 from '../../assets/images/hero/back-float-2.png';
         src={heroImg.src}
         alt="Hero Image"
       />
-      <div class="contact pt-8 text-center">
+      <div class="contact pt-8 text-center text-xl">
         <p>
           Sumérgete en una experiencia única de bienestar y <br
             class="hidden lg:block"
           /> forma parte de nuestra Comunidad
         </p>
-        <div class="mt-10 md:mt-20 flex justify-center w-full h-full">
+        <div class="mt-10 md:mt-20 flex justify-center w-full h-full text-base">
           <a
             href="#subscriber-form"
             class="p-2 rounded bg-primary w-32 h-10 text-white text-center"
@@ -60,6 +71,13 @@ import backFloat2 from '../../assets/images/hero/back-float-2.png';
 </div>
 
 <style>
+  .wave {
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    position: absolute;
+    z-index: -99;
+  }
   .hero {
     height: calc(100vh - 70px);
   }

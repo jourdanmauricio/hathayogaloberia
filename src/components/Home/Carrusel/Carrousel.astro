@@ -1,0 +1,102 @@
+---
+import ajna from '../../../assets/images/muladhra/ajna.svg';
+import anahata from '../../../assets/images/muladhra/anahata.svg';
+import manipura from '../../../assets/images/muladhra/manipura.svg';
+import muladhra from '../../../assets/images/muladhra/muladhra.svg';
+import sahasrara from '../../../assets/images/muladhra/sahasrara.svg';
+import svadhishthana from '../../../assets/images/muladhra/svadhishthana.svg';
+import vishuddaha from '../../../assets/images/muladhra/vishuddaha.svg';
+
+import ItemCarrousel from './Item.astro';
+
+const CARROUSEL = [
+  {
+    image: ajna.src,
+    chakra: 'Ajna',
+  },
+  {
+    image: anahata.src,
+    chakra: 'Anahata',
+  },
+  {
+    image: manipura.src,
+    chakra: 'Manipura',
+  },
+  {
+    image: muladhra.src,
+    chakra: 'Muladhra',
+  },
+  {
+    image: sahasrara.src,
+    chakra: 'Sahasrara',
+  },
+  {
+    image: svadhishthana.src,
+    chakra: 'Svadhishthana',
+  },
+  {
+    image: vishuddaha.src,
+    chakra: 'Vishuddaha',
+  },
+  {
+    image: ajna.src,
+    chakra: 'Ajna',
+  },
+  {
+    image: anahata.src,
+    chakra: 'Anahata',
+  },
+  {
+    image: manipura.src,
+    chakra: 'Manipura',
+  },
+  {
+    image: muladhra.src,
+    chakra: 'Muladhra',
+  },
+  {
+    image: sahasrara.src,
+    chakra: 'Sahasrara',
+  },
+  {
+    image: svadhishthana.src,
+    chakra: 'Svadhishthana',
+  },
+  {
+    image: vishuddaha.src,
+    chakra: 'Vishuddaha',
+  },
+];
+---
+
+<div
+  class="relative overflow-hidden m-auto bg-transparent max-w-[1440px] h-[200px]"
+>
+  <div class="slide-track h-full">
+    {
+      CARROUSEL.map((item) => (
+        <ItemCarrousel
+          image={item.image}
+          chakra={item.chakra}
+        />
+      ))
+    }
+  </div>
+</div>
+
+<style>
+  @keyframes scroll {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(calc(-250px * 7));
+    }
+  }
+
+  .slide-track {
+    animation: scroll 40s linear infinite;
+    display: flex;
+    width: calc(250px * 14);
+  }
+</style>
