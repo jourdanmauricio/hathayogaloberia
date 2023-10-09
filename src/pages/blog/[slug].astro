@@ -9,6 +9,7 @@ export async function getStaticPaths() {
   const posts = await getPosts();
   return posts.map(
     ({ slug, title, content, image, altImage, excerpt, createdAt }) => {
+      // console.log('content', content);
       return {
         params: { slug },
         props: {
@@ -139,7 +140,8 @@ const {
     display: block;
     font-size: 1.17em;
     margin-top: 1em;
-    margin-bottom: 1em;
+    margin-bottom: 0;
+    padding-bottom: 0;
     margin-left: 0;
     margin-right: 0;
     font-weight: bold;
@@ -196,10 +198,10 @@ const {
     display: list-item;
     margin-bottom: 1em;
   }
-  #content p {
+  #content p:not(:has(br)) {
     display: block;
     margin-top: 1em;
-    margin-bottom: 1em;
+    /* margin-bottom: 1em; */
     margin-left: 0;
     margin-right: 0;
   }
