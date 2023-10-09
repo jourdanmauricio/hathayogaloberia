@@ -3,6 +3,7 @@ import Layout from '../../layouts/Layout.astro';
 import { getPosts } from '../../services/posts';
 import Profile from '../../components/Blog/Profile/Profile.astro';
 import ShareButtons from '../../components/Blog/ShareButtons/ShareButtons.astro';
+import '../../styles/quill.snow.css';
 //import profile from '../../assets/images/profile.jpg';
 
 export async function getStaticPaths() {
@@ -68,8 +69,10 @@ const {
       />
     </div>
 
-    <div id="content">
-      <Fragment set:html={content} />
+    <div class="ql-snow">
+      <div class="ql-editor">
+        <Fragment set:html={content} />
+      </div>
     </div>
 
     <div class="flex flex-col md:flex-row justify-between items-center py-8">
@@ -81,7 +84,7 @@ const {
 </Layout>
 
 <style is:inline>
-  #content h3 {
+  /* #content h3 {
     display: block;
     font-size: 1.17em;
     margin-top: 1em;
@@ -201,8 +204,7 @@ const {
   #content p:not(:has(br)) {
     display: block;
     margin-top: 1em;
-    /* margin-bottom: 1em; */
     margin-left: 0;
     margin-right: 0;
-  }
+  } */
 </style>
