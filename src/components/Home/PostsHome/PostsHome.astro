@@ -1,0 +1,75 @@
+---
+import { getPosts } from '@services/posts';
+
+const data = await getPosts();
+
+const filterData = data.filter((post) => post.sections.includes('home'));
+const posts = filterData.sort((a, b) => a.order - b.order);
+const firstPost = posts.shift();
+---
+
+<section class="flex flex-col sm:flex-row px-4 lg:px-20 gap-8">
+  <p>
+    ¡Descubre la armonía interior! Explora mi blog sobre yoga y shiatsu para
+    encontrar guías transformadoras, consejos de bienestar y técnicas de
+    relajación. ¡Únete a nuestro viaje hacia la paz interior!
+  </p>
+  <a
+    class="w-fit whitespace-nowrap bg-primary text-white rounded p-2 h-fit mx-auto"
+    href="/hathayogalobería/posts"
+    >Visita mi blog</a
+  >
+</section>
+
+<section class="pt-8 px-4 lg:px-20 flex flex-col md:flex-row gap-8">
+  <article class="w-full md:w-1/2 border-b-2 pb-4 md:border-b-0">
+    <a
+      class="flex-none text-primary pt-4"
+      href={`/hathayogaloberia/blog/${firstPost.slug}/`}
+    >
+      <img
+        transition:name={firstPost.image}
+        class="w-full h-auto object-cover"
+        src={firstPost.image}
+        alt={firstPost.altImage}
+      />
+    </a>
+    <div class="flex flex-col gap-4 pt-4">
+      <h2
+        class="flex-none text-2xl font-medium text-primary font-title"
+        transition:name={firstPost.title}
+      >
+        {firstPost.title}
+      </h2>
+      <small>{firstPost.createdAt.split(' ')[0]}</small>
+    </div>
+  </article>
+  <div class="flex flex-col gap-4 w-full md:w-1/2">
+    {
+      posts.map((post) => (
+        <article class="flex gap-4 pb-4 border-b-2 last-of-type:border-b-0">
+          <a
+            class="text-primary max-w-[100px] max-h-[100px]"
+            href={`/hathayogaloberia/blog/${post.slug}/`}
+          >
+            <img
+              transition:name={post.image}
+              class="w-full h-[100px] object-cover"
+              src={post.image}
+              alt={post.altImage}
+            />
+          </a>
+          <div class="flex flex-col gap-4 justify-between">
+            <h2
+              class="text-2xl font-medium text-primary font-title"
+              transition:name={post.title}
+            >
+              {post.title}
+            </h2>
+            <small>{post.createdAt.split(' ')[0]}</small>
+          </div>
+        </article>
+      ))
+    }
+  </div>
+</section>

@@ -4,7 +4,7 @@ import pose from '../../../assets/images/home/yoga-pose.svg';
 ---
 
 <section
-  class="smooth-seccion bg-pink-50 flex flex-col sm:flex-row py-24 gap-16 px-4 lg:px-12 text-lg"
+  class="smooth-seccion flex flex-col sm:flex-row gap-16 px-4 lg:px-20 text-lg"
 >
   <article class="w-full lg:w-1/2">
     <img
@@ -43,20 +43,20 @@ import pose from '../../../assets/images/home/yoga-pose.svg';
     animation-timeline: --image;
     animation-name: show;
 
-    animation-range: entry 30% cover 50%;
+    animation-range: entry 10% cover 25%;
     animation-fill-mode: both;
   }
 
   @keyframes show {
     from {
       opacity: 0;
-      /* scale: 25%; */
+      scale: 50%;
       transform: translateY(400px);
     }
 
     to {
       opacity: 1;
-      /* scale: 100%; */
+      scale: 100%;
       transform: translateY(0px);
     }
   }

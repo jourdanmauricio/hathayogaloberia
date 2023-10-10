@@ -1,0 +1,196 @@
+---
+import logoRYL from '../../../assets/images/home/logo-RYL.svg';
+import florDeLoto from '../../../assets/images/home/flor-de-loto.png';
+import hathaYoga from '../../../assets/images/home/hatha-yoga.jpg';
+import shiatsu from '../../../assets/images/home/shiatsu.jpg';
+---
+
+<section>
+  <article class="px-5 lg:px-20 flex flex-wrap justify-center items-center">
+    <article
+      class="flex flex-wrap flex-col grow-0 shrink-0 basis-full lg:basis-1/2 gap-4 items-center justify-center p-5"
+    >
+      <div class="card">
+        <div class="face front">
+          <img
+            src={logoRYL.src}
+            alt="Logo hatha yoga"
+            class="face__img"
+            width={200}
+            height={200}
+          />
+        </div>
+        <div class="face back">
+          <p>Hatha Yoga</p>
+        </div>
+      </div>
+
+      <h2 class="text-2xl text-center mt-6 font-semibold text-primary">
+        Hatha Yoga
+      </h2>
+      <p class="leading-8 font-normal text-xl w-full">
+        El yoga psicofisico (Hatha Yoga) es el sistema más perfecto de acción
+        armonizante sobre el cuerpo, sus funciones y energías. Dispone de un
+        gran número de técnicas de purificación física y energética, donde juega
+        un papel muy importante la atención consciente. Estás técnicas que se
+        aplican sobre el cuerpo son : las asanas o posiciones físicas; el
+        pranayama, o técnica de control respiratorio; los mudras y bandhas, o
+        técnica de aprovechamiento de la energía y por último los shatkarmas o
+        prácticas de limpieza corporal.
+      </p>
+    </article>
+
+    <article
+      class="flex flex-wrap flex-col grow-0 shrink-0 basis-full lg:basis-1/2 gap-4 items-center justify-center p-5"
+    >
+      <img
+        src={hathaYoga.src}
+        alt="Imagen hatha yoga"
+        class="block max-w-[400px] max-h-[450px] mx-auto rounded shadow-[0_0_10px_rgba(0,0,0,0.25)]"
+        width={300}
+        height={450}
+      />
+    </article>
+  </article>
+
+  <article
+    class="py-10 px-5 lg:px-20 flex flex-wrap items-center justify-center flex-row-reverse"
+  >
+    <article
+      class="flex flex-wrap flex-col grow-0 shrink-0 basis-full lg:basis-1/2 gap-4 items-center justify-center p-5"
+    >
+      <div class="card">
+        <div class="face front">
+          <img
+            src={florDeLoto.src}
+            alt="Logo flor de loto"
+            class="face__img"
+            width={200}
+            height={200}
+          />
+        </div>
+        <div class="face back">
+          <p>Shiatsu</p>
+        </div>
+      </div>
+
+      <h2 class="text-2xl text-center mt-6 font-semibold text-primary">
+        Shiatsu
+      </h2>
+
+      <p class="leading-8 font-normal text-xl">
+        El Shiatzu es un método de trabajo corporal cuyo núcleo es una creencia
+        de que todo lo que existe es una manifestación de energía. Esta energía
+        llamada Ki, necesita fluir por el cuerpo humano sin problemas para que
+        esté mantenga una salud óptima y prevenga enfermedades. Mediante la
+        presión con los dedos, palmas o a veces antebrazos, codos o rodillas se
+        estimula esa energía sobre determinados meridianos para su libre fluir.
+        Sus efectos son increíblemente transformadores.
+      </p>
+    </article>
+
+    <article
+      class="flex flex-wrap flex-col grow-0 shrink-0 basis-full md:basis-1/2 gap-4 items-center justify-center p-5"
+    >
+      <img
+        src={shiatsu.src}
+        alt="Imagen shiatsu"
+        class="block max-w-[400px] max-h-[450px] mx-auto rounded shadow-[0_0_10px_rgba(0,0,0,0.25)]"
+        width={300}
+        height={450}
+      />
+    </article>
+  </article>
+
+  <h2
+    class="px-10 md:px-40 font-dancing text-2xl text-center mt-6 font-semibold text-primary"
+  >
+    Nuestra mente es como un lago. Cuando está agitado y movido no puede
+    reflejar el cielo. Solo cuando está perfectamente tranquilo y en calma deja
+    que en él se mire el firmamento.
+  </h2>
+  <h3
+    class="px-10 font-dancing text-2xl text-center mt-6 font-semibold text-primary"
+  >
+    Si todavía no lo experimentaste, animate 🙏
+  </h3>
+</section>
+
+<style>
+  @keyframes show {
+    from {
+      opacity: 0;
+      scale: 50%;
+    }
+
+    to {
+      opacity: 1;
+      scale: 100%;
+    }
+  }
+
+  article {
+    view-timeline-name: --image;
+    view-timeline-axis: block;
+
+    animation-timeline: --image;
+    animation-name: show;
+
+    animation-range: entry 10% cover 20%;
+    animation-fill-mode: both;
+  }
+
+  /****************/
+  /***   CARD   ***/
+  /****************/
+  .card {
+    width: 100px;
+    height: 100px;
+    transform-style: preserve-3d;
+    position: relative;
+  }
+
+  .card:hover .front {
+    transform: perspective(100px) rotateY(180deg);
+    transition: all 1s;
+  }
+
+  .card:hover .back {
+    transform: perspective(100px) rotateY(360deg);
+    transition: all 1s;
+  }
+
+  .face {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 1s;
+    border: 3px solid black;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
+  }
+
+  .face.front {
+    transform: perspective(100px) rotateY(0deg);
+    padding: 1em;
+    background-color: var(--gray-very-ligth);
+  }
+
+  .face__img {
+    width: 100%;
+    height: 100%;
+  }
+
+  .face.back {
+    transform: perspective(100px) rotateY(180deg);
+    font-weight: 600;
+    padding: 1em;
+    text-align: center;
+    color: var(--effect-color);
+    background-color: var(--gray-very-ligth);
+  }
+</style>

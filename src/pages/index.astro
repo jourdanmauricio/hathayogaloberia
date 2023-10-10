@@ -1,10 +1,13 @@
 ---
-import Hero from '../components/Hero/Hero.astro';
+import Hero from '@components/Hero/Hero.astro';
 import Layout from '../layouts/Layout.astro';
-import Subscription from '../components/Subscription/Subscription.astro';
-import Carrusel from '../components/Home/Carrusel/Carrousel.astro';
-import Section1 from '../components/Home/Section1/Section1.astro';
-import Services from '../components/Home/Services/Services.astro';
+import Subscription from '@components/Subscription/Subscription.astro';
+import Carrusel from '@components/Home/Carrusel/Carrousel.astro';
+import Section1 from '@components/Home/Section1/Section1.astro';
+import Services from '@components/Home/Services/Services.astro';
+import Conceptos from '@components/Home/Services/Conceptos.astro';
+import FraseParalax from '@components/Home/Services/FraseParalax.astro';
+import PostsHome from '@components/Home/PostsHome/PostsHome.astro';
 ---
 
 <Layout
@@ -14,10 +17,29 @@ import Services from '../components/Home/Services/Services.astro';
 >
   <Hero />
   <main>
-    <Section1 />
+    <div class="py-24 bg-pink-50">
+      <Section1 />
+    </div>
 
-    <Services />
-    <Carrusel />
+    <div class="py-24 bg-slate-50">
+      <Services />
+    </div>
+
+    <div class="bg-pink-50">
+      <FraseParalax />
+    </div>
+
+    <div class="py-24 bg-pink-50">
+      <Conceptos />
+    </div>
+
+    <div class="py-8 bg-pink-50">
+      <Carrusel />
+    </div>
+
+    <div class="py-8 bg-pink-50">
+      <PostsHome />
+    </div>
 
     <Subscription />
   </main>

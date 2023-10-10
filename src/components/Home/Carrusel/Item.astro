@@ -7,23 +7,21 @@ interface Props {
 const { image, chakra } = Astro.props;
 ---
 
-<div class="relative w-[250px] flex flex-col justify-center items-center">
-  <img
-    src={image}
-    alt=""
-  />
+<div
+  class="group/item w-[250px] flex flex-col justify-center items-center h-full"
+>
+  <div class="min-h-[81px] flex justify-center items-center">
+    <img
+      height="auto"
+      src={image}
+      alt=""
+    />
+  </div>
   <p
-    class="absolute transition-opacity duration-500 opacity-0 hover:opacity-100 w-full h-full flex justify-center items-center backdrop-blur-sm bg-gradient cursor-default"
+    class="transition-opacity duration-500 opacity-0 group-hover/item:opacity-70 cursor-default h-full"
   >
-    {chakra}
+    <span>
+      {chakra}
+    </span>
   </p>
 </div>
-<style>
-  .bg-gradient {
-    background-image: radial-gradient(
-      circle at 50% 50%,
-      #ffffff10 50%,
-      transparent 70%
-    );
-  }
-</style>
