@@ -5,6 +5,9 @@ import tailwind from '@astrojs/tailwind';
 // https://astro.build/config
 export default defineConfig({
   integrations: [tailwind()],
+  experimental: {
+    optimizeHoistedScript: true,
+  },
   image: {
     // remotePatterns: [{ protocol: 'https' }],
     // domains: ['res.cloudinary.com'],
