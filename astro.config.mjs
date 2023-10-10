@@ -6,8 +6,14 @@ import tailwind from '@astrojs/tailwind';
 export default defineConfig({
   integrations: [tailwind()],
   image: {
-    remotePatterns: [{ protocol: 'https' }],
-    domains: ['res.cloudinary.com'],
+    // remotePatterns: [{ protocol: 'https' }],
+    // domains: ['res.cloudinary.com'],
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: '**.cloudinary.com',
+      },
+    ],
   },
   site: 'https://jourdanmauricio.github.io',
   base: '/hathayogaloberia',
