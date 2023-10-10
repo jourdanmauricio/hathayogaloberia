@@ -1,6 +1,8 @@
 ---
 import { getPosts } from '@services/posts';
 
+const PROFILENAME = import.meta.env.PROFILENAME;
+
 const data = await getPosts();
 
 const filterData = data.filter((post) => post.sections.includes('home'));
@@ -16,12 +18,12 @@ const firstPost = posts.shift();
   </p>
   <a
     class="w-fit whitespace-nowrap bg-primary text-white rounded p-2 h-fit mx-auto"
-    href="/hathayogalobería/posts"
+    href="/hathayogaloberia/posts"
     >Visita mi blog</a
   >
 </section>
 
-<section class="pt-8 px-4 lg:px-20 flex flex-col md:flex-row gap-8">
+<section class="pt-40 px-4 lg:px-20 flex flex-col md:flex-row gap-8">
   <article class="w-full md:w-1/2 border-b-2 pb-4 md:border-b-0">
     <a
       class="flex-none text-primary pt-4"
@@ -41,7 +43,7 @@ const firstPost = posts.shift();
       >
         {firstPost.title}
       </h2>
-      <small>{firstPost.createdAt.split(' ')[0]}</small>
+      <small>{PROFILENAME} - {firstPost.createdAt.split(' ')[0]}</small>
     </div>
   </article>
   <div class="flex flex-col gap-4 w-full md:w-1/2">
@@ -66,10 +68,37 @@ const firstPost = posts.shift();
             >
               {post.title}
             </h2>
-            <small>{post.createdAt.split(' ')[0]}</small>
+            <small>
+              {PROFILENAME} - {post.createdAt.split(' ')[0]}
+            </small>
           </div>
         </article>
       ))
     }
   </div>
 </section>
+
+<style>
+  @keyframes show {
+    from {
+      opacity: 0;
+      scale: 50%;
+    }
+
+    to {
+      opacity: 1;
+      scale: 100%;
+    }
+  }
+
+  img {
+    view-timeline-name: --image;
+    view-timeline-axis: block;
+
+    animation-timeline: --image;
+    animation-name: show;
+
+    animation-range: entry 10% cover 20%;
+    animation-fill-mode: both;
+  }
+</style>
