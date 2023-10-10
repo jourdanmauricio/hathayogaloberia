@@ -43,23 +43,26 @@ const posts = filterData.sort((a, b) => a.order - b.order);
                 {post.createdAt.split(' ')[0]}
               </p>
               <a
-                class="flex-none text-primary pt-4 "
+                class="flex-none relative flex justify-center group overflow-hidden"
                 href={`/hathayogaloberia/blog/${post.slug}/`}
               >
                 <img
                   transition:name={post.image}
-                  class="w-full h-[200px] object-cover"
+                  class="w-full h-[200px] group-hover:scale-110 transition duration-500 object-cover"
                   src={post.image}
                   alt={post.altImage}
                 />
+                <div class="absolute bg-black w-full h-full opacity-0 transition-opacity duration-500 group-hover:opacity-30" />
               </a>
               <div class="px-4 flex flex-col">
-                <h2
-                  class="flex-none text-lg font-medium text-primary font-title pt-4 line-clamp-1"
-                  transition:name={post.title}
-                >
-                  {post.title}
-                </h2>
+                <a href={`/hathayogaloberia/blog/${post.slug}/`}>
+                  <h2
+                    class="flex-none text-lg font-medium text-primary font-title pt-4 line-clamp-1"
+                    transition:name={post.title}
+                  >
+                    {post.title}
+                  </h2>
+                </a>
                 <p
                   class="line-clamp-3 pt-4"
                   transition:name={post.excerpt}
