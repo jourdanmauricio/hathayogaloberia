@@ -11,7 +11,7 @@ const firstPost = posts.shift();
 ---
 
 <section class="flex flex-col sm:flex-row px-4 lg:px-20 gap-8">
-  <p>
+  <p class="leading-8 font-normal w-full">
     ¡Descubre la armonía interior! Explora mi blog sobre yoga y shiatsu para
     encontrar guías transformadoras, consejos de bienestar y técnicas de
     relajación. ¡Únete a nuestro viaje hacia la paz interior!
@@ -26,23 +26,31 @@ const firstPost = posts.shift();
 <section class="pt-40 px-4 lg:px-20 flex flex-col md:flex-row gap-8">
   <article class="w-full md:w-1/2 border-b-2 pb-4 md:border-b-0">
     <a
-      class="flex-none text-primary pt-4"
+      class="cursor-pointer relative flex justify-center group overflow-hidden"
       href={`/hathayogaloberia/blog/${firstPost.slug}/`}
     >
       <img
         transition:name={firstPost.image}
-        class="w-full h-auto object-cover"
+        class="w-full h-auto group-hover:scale-110 transition duration-500 object-cover"
         src={firstPost.image}
         alt={firstPost.altImage}
       />
-    </a>
-    <div class="flex flex-col gap-4 pt-4">
-      <h2
-        class="flex-none text-2xl font-medium text-primary font-title"
-        transition:name={firstPost.title}
+
+      <div
+        class="absolute bg-black w-full h-full opacity-0 transition-opacity duration-500 group-hover:opacity-30"
       >
-        {firstPost.title}
-      </h2>
+      </div>
+    </a>
+
+    <div class="flex flex-col gap-4 pt-4">
+      <a href={`/hathayogaloberia/blog/${firstPost.slug}/`}>
+        <h2
+          class="flex-none text-2xl font-medium text-primary font-title"
+          transition:name={firstPost.title}
+        >
+          {firstPost.title}
+        </h2>
+      </a>
       <small>{PROFILENAME} - {firstPost.createdAt.split(' ')[0]}</small>
     </div>
   </article>
@@ -51,23 +59,26 @@ const firstPost = posts.shift();
       posts.map((post) => (
         <article class="flex gap-4 pb-4 border-b-2 last-of-type:border-b-0">
           <a
-            class="text-primary max-w-[100px] max-h-[100px]"
+            class="relative flex justify-center group overflow-hidden text-primary max-w-[100px] max-h-[100px]"
             href={`/hathayogaloberia/blog/${post.slug}/`}
           >
             <img
               transition:name={post.image}
-              class="w-full h-[100px] object-cover"
+              class="w-full h-[100px] group-hover:scale-110 transition duration-500 object-cover"
               src={post.image}
               alt={post.altImage}
             />
+            <div class="absolute bg-black w-full h-full opacity-0 transition-opacity duration-500 group-hover:opacity-30" />
           </a>
           <div class="flex flex-col gap-4 justify-between">
-            <h2
-              class="text-2xl font-medium text-primary font-title"
-              transition:name={post.title}
-            >
-              {post.title}
-            </h2>
+            <a href={`/hathayogaloberia/blog/${post.slug}/`}>
+              <h2
+                class="text-2xl font-medium text-primary font-title"
+                transition:name={post.title}
+              >
+                {post.title}
+              </h2>
+            </a>
             <small>
               {PROFILENAME} - {post.createdAt.split(' ')[0]}
             </small>
@@ -77,28 +88,3 @@ const firstPost = posts.shift();
     }
   </div>
 </section>
-
-<style>
-  @keyframes show {
-    from {
-      opacity: 0;
-      scale: 50%;
-    }
-
-    to {
-      opacity: 1;
-      scale: 100%;
-    }
-  }
-
-  img {
-    view-timeline-name: --image;
-    view-timeline-axis: block;
-
-    animation-timeline: --image;
-    animation-name: show;
-
-    animation-range: entry 10% cover 20%;
-    animation-fill-mode: both;
-  }
-</style>
