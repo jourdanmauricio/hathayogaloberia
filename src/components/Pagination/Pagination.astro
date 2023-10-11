@@ -1,0 +1,27 @@
+---
+const { length, firstPage, lastPage, currentPage } = Astro.props;
+---
+
+<div class="flex w-full gap-8 justify-center">
+  <a
+    class={`border p-2 text-white rounded ${
+      currentPage === parseInt(firstPage)
+        ? 'bg-slate-600 pointer-events-none cursor-default'
+        : 'bg-primary'
+    }`}
+    href=`/hathayogaloberia/posts/${currentPage - 1}`
+    >Página anterior</a
+  >
+  <div class="border border-slate-800 px-4 py-2 text-slate-800">
+    {currentPage}
+  </div>
+  <a
+    class={`border p-2 text-white rounded ${
+      currentPage === parseInt(lastPage)
+        ? 'bg-gray-600 pointer-events-none cursor-default'
+        : 'bg-primary'
+    }`}
+    href=`/hathayogaloberia/posts/${currentPage + 1}`
+    >Siguiente página</a
+  >
+</div>

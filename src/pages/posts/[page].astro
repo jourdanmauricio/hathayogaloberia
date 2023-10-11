@@ -1,11 +1,16 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import { getPosts } from '../services/posts';
+import Layout from '@layouts/Layout.astro';
+import Pagination from '@components/Pagination/Pagination.astro';
+import { getPosts } from '../../services/posts';
 
-const data = await getPosts();
+export async function getStaticPaths({ paginate }) {
+  const data = await getPosts();
+  const filterData = data.filter((post) => post.sections.includes('blog'));
+  const posts = filterData.sort((a, b) => a.order - b.order);
 
-const filterData = data.filter((post) => post.sections.includes('blog'));
-const posts = filterData.sort((a, b) => a.order - b.order);
+  return paginate(posts, { pageSize: 6 });
+}
+const { page } = Astro.props;
 ---
 
 <Layout
@@ -37,7 +42,7 @@ const posts = filterData.sort((a, b) => a.order - b.order);
     <div class="px-4 lg:px-16 my-20 w-full mx-auto">
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
         {
-          posts.map((post) => (
+          page.data.map((post) => (
             <article class="w-full h-fit shadow mx-auto max-w-[300px] lg:max-w-none">
               <p class="text-sm text-slate-700">
                 {post.createdAt.split(' ')[0]}
@@ -80,6 +85,19 @@ const posts = filterData.sort((a, b) => a.order - b.order);
           ))
         }
       </div>
+
+      {
+        page.total > page.size ? (
+          <div class="py-20">
+            <Pagination
+              length={page.lastPage}
+              firstPage="1"
+              lastPage={page.lastPage}
+              currentPage={page.currentPage}
+            />
+          </div>
+        ) : null
+      }
     </div>
   </main>
 </Layout>
