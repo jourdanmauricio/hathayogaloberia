@@ -17,22 +17,22 @@ const { page } = Astro.props;
   title="Hatha Yoga Lobería | Blog"
   slug="posts"
 >
-  <header class="relative overflow-hidden">
-    <h1 class="text-5xl font-dancing text-primary text-center pt-20">
+  <header class="relative overflow-hidden px-4 lg:px-24">
+    <h1 class="text-5xl font-dancing text-primary text-center pt-24">
       Bienvenidos al Blog!
     </h1>
-    <section class="px-4 lg:px-16 mt-24 w-full md:w-3/4 mx-auto">
+    <section class="mt-24 w-full md:w-3/4 mx-auto">
       <div class="text-lg text-slate-950">
-        <p>
+        <p class="paragraph">
           ¡Bienvenidos a nuestro blog de yoga y shiatsu! En este espacio,
           compartimos información y reflexiones sobre yoga y shiatsu.
         </p>
-        <p class="pt-8">
+        <p class="paragraph pt-8">
           La difusión de estas prácticas es fundamental para nosotros. Creemos
           en los beneficios transformadores que el yoga y el shiatsu pueden
           aportar a la vida de las personas.
         </p>
-        <p class="pt-8">
+        <p class="paragraph pt-8">
           Este blog es un recurso que les brindará información valiosa,
           inspiración y consejos prácticos para mejorar su práctica de yoga y
           shiatsu. Estamos emocionados de ser parte de su viaje de difusión de
@@ -72,13 +72,13 @@ const { page } = Astro.props;
                   </h2>
                 </a>
                 <p
-                  class="line-clamp-3 pt-4"
+                  class="text-sm line-clamp-3 pt-4"
                   transition:name={post.excerpt}
                 >
                   {post.excerpt}{' '}
                 </p>
                 <a
-                  class="flex-none text-primary pt-4"
+                  class="flex-none text-primary py-4"
                   href={`/hathayogaloberia/blog/${post.slug}/`}
                 >
                   Leer más...
