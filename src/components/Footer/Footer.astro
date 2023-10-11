@@ -1,7 +1,7 @@
 ---
-import SocialNetworks from '../SocialNetworks/SocialNetworks.astro';
-import { getOffices } from '../../services/offices';
-import namaste from '../../assets/images/footer/namaste.svg';
+import SocialNetworks from '@components/SocialNetworks/SocialNetworks.astro';
+import { getOffices } from '@services/offices';
+import namaste from '@assets/images/footer/namaste.svg';
 
 const offices = await getOffices();
 ---

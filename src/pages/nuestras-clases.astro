@@ -1,9 +1,8 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import { getLessons } from '../services/lessons';
-import { getNetworks } from '../services/networks';
-import clasesPresenciales from '../assets/images/clases/clases-presenciales.png';
-// import { Image } from 'astro:assets';
+import Layout from '@layouts/Layout.astro';
+import { getLessons } from '@services/lessons';
+import { getNetworks } from '@services/networks';
+import clasesPresenciales from '@assets/images/clases/clases-presenciales.png';
 
 const networks = await getNetworks();
 const data = await getLessons();
@@ -15,7 +14,6 @@ const lessons = data.sort((a, b) => a.order - b.order);
   title="Hatha Yoga Lobería | Blog"
   slug="nuestras-clases"
 >
-  <!-- <div class="rect-left"></div> -->
   <header class="relative overflow-hidden px-4 lg:px-16">
     <h1 class="text-4xl text-center text-primary font-semibold mt-8">
       Nuestras Clases

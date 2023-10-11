@@ -1,7 +1,7 @@
 ---
 import Layout from '@layouts/Layout.astro';
 import Pagination from '@components/Pagination/Pagination.astro';
-import { getPosts } from '../../services/posts';
+import { getPosts } from '@services/posts';
 
 export async function getStaticPaths({ paginate }) {
   const data = await getPosts();

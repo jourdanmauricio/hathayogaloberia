@@ -1,9 +1,9 @@
 ---
-import Layout from '../../layouts/Layout.astro';
-import { getPosts } from '../../services/posts';
-import Profile from '../../components/Blog/Profile/Profile.astro';
-import ShareButtons from '../../components/Blog/ShareButtons/ShareButtons.astro';
-import '../../styles/quill.snow.css';
+import Layout from '@layouts/Layout.astro';
+import { getPosts } from '@services/posts';
+import Profile from '@components/Blog/Profile/Profile.astro';
+import ShareButtons from '@components/Blog/ShareButtons/ShareButtons.astro';
+import '@styles/quill.snow.css';
 
 export async function getStaticPaths() {
   const posts = await getPosts();

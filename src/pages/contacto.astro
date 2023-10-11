@@ -1,9 +1,9 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import Subscription from '../components/Subscription/Subscription.astro';
-import ContactForm from '../components/Contact/ContactForm/ContactForm.astro';
-import { getOffices } from '../services/offices';
-import heroContact from '../assets/images/contact/hero-contact.png';
+import Layout from '@layouts/Layout.astro';
+import Subscription from '@components/Subscription/Subscription.astro';
+import ContactForm from '@components/Contact/ContactForm/ContactForm.astro';
+import { getOffices } from '@services/offices';
+import heroContact from '@assets/images/contact/hero-contact.png';
 
 const offices = await getOffices();
 ---
