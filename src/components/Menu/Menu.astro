@@ -1,3 +1,7 @@
+---
+import { Icon } from 'astro-icon';
+---
+
 <div class="rect-left"></div>
 <nav
   class="flex justify-between items-center gap-4 py-2 px-4 lg:px-20 bg-transparent w-full max-w-[1440px] mx-auto"
@@ -13,14 +17,10 @@
     for="menu-mobile"
     class="cursor-pointer block lg:hidden fixed z-50 right-4 text-cyan-950 peer-checked:text-slate-50"
   >
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      width="40"
-      height="40"
-      viewBox="0 0 24 24"
-      fill="currentColor"
-      ><path d="M4 6h16v2H4zm0 5h16v2H4zm0 5h16v2H4z"></path></svg
-    >
+    <Icon
+      name="mdi:menu"
+      class="h-10 w-10"
+    />
   </label>
 
   <!-- Fin menu mobile -->

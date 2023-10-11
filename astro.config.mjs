@@ -9,8 +9,6 @@ export default defineConfig({
     optimizeHoistedScript: true,
   },
   image: {
-    // remotePatterns: [{ protocol: 'https' }],
-    // domains: ['res.cloudinary.com'],
     remotePatterns: [
       {
         protocol: 'https',
@@ -20,4 +18,9 @@ export default defineConfig({
   },
   site: 'https://jourdanmauricio.github.io',
   base: '/hathayogaloberia',
+  vite: {
+    ssr: {
+      external: ['svgo'],
+    },
+  },
 });
