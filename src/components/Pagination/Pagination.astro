@@ -10,7 +10,7 @@ const { length, firstPage, lastPage, currentPage } = Astro.props;
         : 'bg-primary'
     }`}
     href=`/hathayogaloberia/posts/${currentPage - 1}`
-    >Página anterior</a
+    >Anterior</a
   >
   <div class="border border-slate-800 px-4 py-2 text-slate-800">
     {currentPage}
@@ -22,6 +22,6 @@ const { length, firstPage, lastPage, currentPage } = Astro.props;
         : 'bg-primary'
     }`}
     href=`/hathayogaloberia/posts/${currentPage + 1}`
-    >Siguiente página</a
+    >Siguiente</a
   >
 </div>
